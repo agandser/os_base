@@ -14,9 +14,8 @@ int main() {
         char c;
         
         // Чтение строки до null-терминатора
-        while (read(STDIN_FILENO, &c, 1) > 0 && c != '\0') {
-            str += c;
-        }
+        std::getline(std::cin, str, '\0');// Читаем до null-терминатора 
+        
 
         if (str.empty()) { // Завершаем работу, если пустая строка
             break;

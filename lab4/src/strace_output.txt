@@ -1,0 +1,111 @@
+1507  execve("./TestProgram1", ["./TestProgram1"], 0x7ffd16befdc8 /* 26 vars */) = 0
+1507  brk(NULL)                         = 0x2c4f5000
+1507  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe146add000
+1507  readlink("/proc/self/exe", "/workspaces/os_base/lab4/src/Tes"..., 4096) = 41
+1507  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/glibc-hwcaps/x86-64-v4/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/glibc-hwcaps/x86-64-v4", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/glibc-hwcaps/x86-64-v3/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/glibc-hwcaps/x86-64-v3", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/glibc-hwcaps/x86-64-v2/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/glibc-hwcaps/x86-64-v2", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/x86_64/x86_64/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/x86_64/x86_64", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/x86_64/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/x86_64", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/x86_64/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/x86_64", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/tls", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/x86_64/x86_64/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/x86_64/x86_64", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/x86_64/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/x86_64", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/x86_64/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  newfstatat(AT_FDCWD, "/workspaces/os_base/lab4/src/x86_64", 0x7fff9bc615b0, 0) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/libSinIntegral_Rect.so", O_RDONLY|O_CLOEXEC) = 3
+1507  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+1507  newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=16048, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 16456, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe146ad8000
+1507  mmap(0x7fe146ad9000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fe146ad9000
+1507  mmap(0x7fe146ada000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe146ada000
+1507  mmap(0x7fe146adb000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe146adb000
+1507  close(3)                          = 0
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/libSort_Bubble.so", O_RDONLY|O_CLOEXEC) = 3
+1507  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+1507  newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=15984, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 16448, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe146ad3000
+1507  mmap(0x7fe146ad4000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fe146ad4000
+1507  mmap(0x7fe146ad5000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe146ad5000
+1507  mmap(0x7fe146ad6000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe146ad6000
+1507  close(3)                          = 0
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+1507  newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=25258, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 25258, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe146acc000
+1507  close(3)                          = 0
+1507  openat(AT_FDCWD, "/usr/local/lib64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+1507  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+1507  newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2530008, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 2543808, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe14685e000
+1507  mmap(0x7fe146903000, 1216512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa5000) = 0x7fe146903000
+1507  mmap(0x7fe146a2c000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ce000) = 0x7fe146a2c000
+1507  mmap(0x7fe146aba000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25c000) = 0x7fe146aba000
+1507  mmap(0x7fe146ac8000, 12480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe146ac8000
+1507  close(3)                          = 0
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+1507  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+1507  newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=907784, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 909560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe14677f000
+1507  mmap(0x7fe14678f000, 471040, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x7fe14678f000
+1507  mmap(0x7fe146802000, 368640, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x83000) = 0x7fe146802000
+1507  mmap(0x7fe14685c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xdc000) = 0x7fe14685c000
+1507  close(3)                          = 0
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/usr/local/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+1507  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+1507  newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=906528, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 181160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe146752000
+1507  mmap(0x7fe146756000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7fe146756000
+1507  mmap(0x7fe146779000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x7fe146779000
+1507  mmap(0x7fe14677d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7fe14677d000
+1507  close(3)                          = 0
+1507  openat(AT_FDCWD, "/workspaces/os_base/lab4/src/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1507  openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+1507  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20t\2\0\0\0\0\0"..., 832) = 832
+1507  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+1507  newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1922136, ...}, AT_EMPTY_PATH) = 0
+1507  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe146750000
+1507  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+1507  mmap(NULL, 1970000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe14656f000
+1507  mmap(0x7fe146595000, 1396736, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7fe146595000
+1507  mmap(0x7fe1466ea000, 339968, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x17b000) = 0x7fe1466ea000
+1507  mmap(0x7fe14673d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ce000) = 0x7fe14673d000
+1507  mmap(0x7fe146743000, 53072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe146743000
+1507  close(3)                          = 0
+1507  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe14656c000
+1507  arch_prctl(ARCH_SET_FS, 0x7fe14656c740) = 0
+1507  set_tid_address(0x7fe14656ca10)   = 1507
+1507  set_robust_list(0x7fe14656ca20, 24) = 0
+1507  rseq(0x7fe14656d060, 0x20, 0, 0x53053053) = 0
+1507  mprotect(0x7fe14673d000, 16384, PROT_READ) = 0
+1507  mprotect(0x7fe14677d000, 4096, PROT_READ) = 0
+1507  mprotect(0x7fe14685c000, 4096, PROT_READ) = 0
+1507  mprotect(0x7fe146aba000, 45056, PROT_READ) = 0
+1507  mprotect(0x7fe146ad6000, 4096, PROT_READ) = 0
+1507  mprotect(0x7fe146adb000, 4096, PROT_READ) = 0
+1507  mprotect(0x403000, 4096, PROT_READ) = 0
+1507  mprotect(0x7fe146b0f000, 8192, PROT_READ) = 0
+1507  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+1507  munmap(0x7fe146acc000, 25258)     = 0
+1507  futex(0x7fe146ac873c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+1507  getrandom("\xd6\x56\xa4\x40\xb7\xf0\xd4\x1a", 8, GRND_NONBLOCK) = 8
+1507  brk(NULL)                         = 0x2c4f5000
+1507  brk(0x2c516000)                   = 0x2c516000
+1507  newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+1507  write(1, "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\274\320\260\320\275\320\264\321\203 (0"..., 160) = 160
+1507  newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+1507  read(0, 0x2c5076c0, 1024)         = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+1507  --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+1507  +++ killed by SIGINT +++

@@ -9,7 +9,7 @@ def generate_input_file(filename, num_count, min_value, max_value):
 
 if __name__ == "__main__":
     filename = "test.txt"
-    num_count = 60000  # Количество случайных чисел
+    num_count = 12000000  # Количество случайных чисел
     min_value = 1   # Минимальное значение
     max_value = 10000000 # Максимальное значение
 

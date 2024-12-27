@@ -6,7 +6,7 @@ g++ -std=c++20 -pthread sort.cpp -o sort
 ```
 ## Запуск
 ```bash
-time ./sort 4 test.txt output.txt
+time ./sort -t 4 -i test.txt -o output.txt
 ```
 ## Просмотр количества потоков
 ```bash

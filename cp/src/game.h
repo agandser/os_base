@@ -7,16 +7,13 @@
 #include "player.h"
 
 /*
- *Класс, управляющий логикой «Морского боя» между двумя игроками
+ * Класс, управляющий логикой Морского боя между двумя игроками
  */
 class Game {
 public:
     Player player1;
     Player player2;
 
-    /*
-     *Запуск игры
-     */
     void play(zmq::socket_t& player1_socket,
               zmq::socket_t& player2_socket,
               pid_t first_player_pid,
@@ -29,7 +26,6 @@ public:
         player1.num = 1;
         player2.num = 2;
 
-        // Расстановка кораблей
         player1.placeShips(player1_socket, first_player_pid, second_player_pid);
         player2.placeShips(player2_socket, first_player_pid, second_player_pid);
 
@@ -44,44 +40,38 @@ public:
             }
 
             if (turn % 2 == 0) {
-                // Ход первого
-                send_mes(player1_socket, "your_turn");
-                get_mes(player1_socket);
+                send_message(player1_socket, "your_turn");
+                receive_message(player1_socket);
 
-                send_mes(player2_socket, "not_your_turn");
-                get_mes(player2_socket);
+                send_message(player2_socket, "not_your_turn");
+                receive_message(player2_socket);
 
                 if (playerTurn(player1, player2, player1_socket, player2_socket)) {
                     if (gameOver()) {
-                        // Победил 1
-                        send_mes(player1_socket, "win");
-                        get_mes(player1_socket);
-
-                        send_mes(player2_socket, "lose");
-                        get_mes(player2_socket);
+                        send_message(player1_socket, "win");
+                        receive_message(player1_socket);
+                        send_message(player2_socket, "lose");
+                        receive_message(player2_socket);
                         break;
                     }
-                    // Повтор хода (попадание)
                     continue;
                 } else {
                     turn++;
                 }
             } else {
-                // Ход второго
-                send_mes(player2_socket, "your_turn");
-                get_mes(player2_socket);
+                send_message(player2_socket, "your_turn");
+                receive_message(player2_socket);
 
-                send_mes(player1_socket, "not_your_turn");
-                get_mes(player1_socket);
+                send_message(player1_socket, "not_your_turn");
+                receive_message(player1_socket);
 
                 if (playerTurn(player2, player1, player2_socket, player1_socket)) {
                     if (gameOver()) {
                         // Победил 2
-                        send_mes(player2_socket, "win");
-                        get_mes(player2_socket);
-
-                        send_mes(player1_socket, "lose");
-                        get_mes(player1_socket);
+                        send_message(player2_socket, "win");
+                        receive_message(player2_socket);
+                        send_message(player1_socket, "lose");
+                        receive_message(player1_socket);
                         break;
                     }
                     continue;
@@ -94,9 +84,7 @@ public:
     }
 
 private:
-    /*
-     * Проверка, не уничтожены ли все корабли
-     */
+
     bool gameOver() const {
         return allShipsDead(player1) || allShipsDead(player2);
     }
@@ -112,32 +100,25 @@ private:
         return true;
     }
 
-    /*
-     * Ход: attacker стреляет по defender
-     * true, если попадание (ход повторяется), иначе false
-     */
+
     bool playerTurn(Player& attacker, Player& defender,
                     zmq::socket_t& attacker_socket,
                     zmq::socket_t& defender_socket)
     {
-        // Говорим «shoot»
-        send_mes(attacker_socket, "shoot");
-        std::string recv = get_mes(attacker_socket);
-        // Ожидаем: "coords:x:y"
+        send_message(attacker_socket, "shoot");
+        std::string recv = receive_message(attacker_socket);
 
         std::stringstream ss(recv);
         std::string cmd, sx, sy;
         std::getline(ss, cmd, ':'); // coords
         std::getline(ss, sx, ':');
         std::getline(ss, sy, ':');
-
         if (sx.empty() || sy.empty()) {
             // Неверный формат
-            send_mes(attacker_socket, "miss");
-            get_mes(attacker_socket);
-
-            send_mes(defender_socket, "miss");
-            get_mes(defender_socket);
+            send_message(attacker_socket, "miss");
+            receive_message(attacker_socket);
+            send_message(defender_socket, "miss");
+            receive_message(defender_socket);
             return false;
         }
 
@@ -147,40 +128,38 @@ private:
         // Проверка
         if (x < 0 || x >= BOARD_SIZE || y < 0 || y >= BOARD_SIZE) {
             // Мимо
-            send_mes(attacker_socket, "miss");
-            get_mes(attacker_socket);
-
-            send_mes(defender_socket, "miss");
-            get_mes(defender_socket);
+            send_message(attacker_socket, "miss");
+            receive_message(attacker_socket);
+            send_message(defender_socket, "miss");
+            receive_message(defender_socket);
             return false;
         }
 
         // Попал?
         if (defender.board[x][y] == 'O') {
             defender.board[x][y] = 'X';
-            send_mes(attacker_socket, "shooted");
-            get_mes(attacker_socket);
-
-            send_mes(defender_socket, "shooted");
-            get_mes(defender_socket);
+            send_message(attacker_socket, "shooted");
+            receive_message(attacker_socket);
+            send_message(defender_socket, "shooted");
+            receive_message(defender_socket);
             return true; 
         } else {
             // Промах
             if (defender.board[x][y] == ' ') {
                 defender.board[x][y] = '*';
             }
-            send_mes(attacker_socket, "miss");
-            get_mes(attacker_socket);
+            send_message(attacker_socket, "miss");
+            receive_message(attacker_socket);
 
-            send_mes(defender_socket, "miss");
-            get_mes(defender_socket);
+            send_message(defender_socket, "miss");
+            receive_message(defender_socket);
 
             // Покажем поле
-            send_mes(attacker_socket, "board" + defender.getClearBoard());
-            get_mes(attacker_socket);
+            send_message(attacker_socket, "board" + defender.getClearBoard());
+            receive_message(attacker_socket);
 
-            send_mes(defender_socket, "board" + defender.getBoard());
-            get_mes(defender_socket);
+            send_message(defender_socket, "board" + defender.getBoard());
+            receive_message(defender_socket);
 
             return false;
         }
